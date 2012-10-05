@@ -2,7 +2,7 @@
 
 TorrentEdit edits tracker list from torrent files.
 
-Live site at http://torrentedit.pagodabox.com
+Live site at http://torrentedit.pagodabox.com/
 
 ## Todo ##
 
