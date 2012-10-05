@@ -4,7 +4,7 @@
 
 $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
-$libDir = "$vendorDir../../lib";
+$libDir = $vendorDir . '/../lib';
 
 return array(
     'Symfony\\Component\\Routing' => $vendorDir . '/symfony/routing/',
