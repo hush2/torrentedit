@@ -1,0 +1,8 @@
+web1: 
+  name: torrentedit 
+  #shared_writable_dirs:
+  #   - /cache  
+  document_root: /public
+  php_version: 5.3.8 
+  php_extensions:
+     - curl
