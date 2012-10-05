@@ -1,0 +1,84 @@
+h1 {
+    margin: 14px 0;
+    text-align: center;
+}
+
+h4 {
+    margin: 4px 0;
+    color: #996666;
+}
+
+#title1 {
+    color: #CCCCFF ;
+}
+
+#title2 {
+    color: #CCCC99;
+}
+
+label {
+    padding-top: 6px;
+    float: left;
+    width: 100px;
+}
+
+#file {
+    color: #009900;
+}
+
+#save {
+    margin-left:100px;
+}
+
+#msg, #desc {
+    font-family: monospace;
+    margin: 0;
+}
+
+#msg {
+    margin-bottom: 20px;
+}
+#desc {
+    display: none;
+}
+
+.error {
+    color: #ff0000;
+}
+
+.seeders {
+    color: #0000ff;
+}
+
+.leechers {
+    color: #66cc66;
+}
+
+.completed {
+    color: #898989;
+}
+
+label p {
+    margin: 0;
+}
+
+#scrape {
+    margin-top: 10px;
+}
+
+#ajaximg {
+    margin: 10px 0;
+}
+
+.copy {
+    margin-top: 30px;
+    color: #738E73;
+}
+
+.alert {
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+}

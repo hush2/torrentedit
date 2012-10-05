@@ -1,0 +1,99 @@
+{% extends 'base.twig' %}
+{% block content %}
+
+<div class='row'>
+    <div class='span10 offset1'>
+
+    <form class="form-horizontal well" action='save' method='post'>
+    <fieldset>
+
+        <div class="control-group">
+            <label>File</label><p id='file'>{{ filename }}</p>
+        </div>
+
+        <div class="control-group">
+        <label><p>Trackers</p><input id='scrape' class='btn-small btn-primary' id='scrape' type='button' value='SCRAPE'/></label>
+        <textarea id='trackers' name='trackers' class='span7' rows='9'>{{ trackers }}</textarea>
+        </div>
+
+        <div id='desc' class="control-group">
+        <label>
+        <p class='seeders'>seeders</p>
+        <p class='leechers'>leechers</p>
+        <p class='completed'>completed</p>
+        <img id='ajaximg' src='js/ajax.gif'/>
+        </label>
+        <div id='msg' class='span8'></div>
+        </div>
+
+        <div class="control-group">
+        <label>Created On</label>
+        <input name='creation_date' type='text' class='span5' value='{{ creation_date }}' placeholder='{{ creation_date }}'>
+        </div>
+
+        <div class="control-group">
+        <label>Created By</label>
+        <input name='created_by' type='text' class='span5' value='{{ created_by }}' placeholder='TorrentEdit'>
+        </div>
+
+        <div class="control-group">
+        <label>Comment</label>
+        <input name='comment' type='text' class='span5' value='{{ comment }}'>
+        </div>
+
+        <div class="control-group">
+        <label>Hash</label>
+        <input id='info_hash' type='text' class='span5' value='{{ hash }}' disabled>
+        </div>
+
+        <div class="control-group">
+        <label>Encoding</label>
+        <input id='encoding' type='text' class='span5' value='{{ encoding }}' disabled>
+        </div>
+
+        <div class="control-group">
+        <label>Private</label>
+        <input type='text'
+               class='span5'
+               value='{{ private ? true ? 'Yes' : 'No' : '(not set)' }}'
+               disabled>
+        </div>
+
+        <div class="control-group">
+            <label>Pieces</label>
+            <input type='text' class='span5' value='{{ pieces }} x {{ piece_length }}' disabled>
+        </div>
+
+        <div class="control-group">
+            <input name='submit' type='submit' class='btn-large btn-success' value='Save Changes'>
+        </div>
+
+    </fieldset>
+    <input type='hidden' name='filename' value="{{ filename | default(null) }}"></input>
+    <input type='hidden' name='raw' value="{{ raw | default(null) }}"></input>
+    </form>
+
+<table class="table table-striped">
+    <tr>
+        <th>{{ dir }}</th>
+        <th>{{ total_files }} File(s)</th>
+    </tr>
+    {% set total = 0 %}
+    {% for file in files %}
+        {% set total =  total + file.size %}
+        <tr>
+            <td>{{ file.name }} </td>
+            <td>{{ format_filesize(file.size)}} </td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <th></th>
+        <th>{{format_filesize(total)}} </th>
+    </tr>
+
+</table>
+
+</div>
+
+
+{% endblock %}

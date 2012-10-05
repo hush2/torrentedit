@@ -1,0 +1,41 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    <div class='row'>
+        <div class='span10 offset1'>
+        <form class='form-horizontal well' action='edit' method='post'>
+            <label>From URL</label><input type='text' name='url' class='span7' value='{{ url | default('') }}'>
+            <input type='submit' name='submit' value='Edit'>
+        </form>
+
+        <form class='form-horizontal well' enctype='multipart/form-data' action='edit' method='post'>
+            <label>From File</label><input type='file' name='file' class='span7 input-file'>
+            <input type='submit' name='submit' value='Edit'>
+        </form>
+
+        {% if error | default (null) %}
+        <div class='span4 offset2 alert alert-error'>{{ error }}</div>
+        {% endif %}
+
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="span8 offset1">
+    <br/>
+    <h4>What is TorrentEdit?</h4>
+    <p>TorrentEdit is an easy way to edit tracker list from torrent files.</p>
+    <h4>Features</h4>
+    <ul>
+        <li>Add, update, or remove trackers</li>
+        <li>Edit creation date, created by and comment fields</li>
+        <li>Scrape torrent tracker for seeders &amp; leechers info</li>
+        <li>Save to a new torrent file</li>
+    </ul>
+    <hr />
+    <p class='copy'>Copyright &copy; 2012 hush2 </p>
+    </div>
+    </div>
+
+{% endblock %}

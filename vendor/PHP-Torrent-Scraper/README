@@ -1,0 +1,10 @@
+Classes to scrape a torrent status by using the HTTP or UDP protocol.
+
+2010 by Johannes Zinnau
+johannes@johnimedia.de
+
+2012 by Alexey Borodin
+admin@kinokpk.com
+
+Licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License
+http://creativecommons.org/licenses/by-sa/3.0/
