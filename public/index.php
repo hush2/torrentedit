@@ -45,7 +45,7 @@ $app->get('/', function() use ($app) {
 // ------------------------------------------------------
 $app->post('/edit', function(Request $request) use ($app) {
 
-    $url = $request->get('url');
+    $url = trim($request->get('url'));
     $file = $request->files->get('file');
 
     if (empty($url) && !is_object($file)) {
